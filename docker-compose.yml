@@ -1,0 +1,16 @@
+networks:
+  proxynet:
+    external: true
+    name: proxynet
+
+services:
+  cockpit:
+     container_name: autodeko-backend
+     image: cockpithq/cockpit:core-2.11.3
+     restart: unless-stopped
+     networks:
+       - proxynet
+     volumes:
+       - ./addons:/var/www/html/addons
+       - ./storage:/var/www/html/storage
+       - ./config:/var/www/html/config
