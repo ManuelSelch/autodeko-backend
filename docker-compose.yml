@@ -6,7 +6,7 @@ networks:
 services:
   cockpit:
      container_name: autodeko-backend
-     image: cockpithq/cockpit:core-2.11.3
+     image: cockpithq/cockpit:core-latest
      restart: unless-stopped
      networks:
        - proxynet
